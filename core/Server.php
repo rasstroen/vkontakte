@@ -13,6 +13,7 @@ class Server {
 		$action = $this->request->getAction();
 		switch ($action) {
 			case 'Init':
+				$action .= "Action";
 				$module = new $action($action);
 				$module->process();
 				$this->setResult($module->getResult());
